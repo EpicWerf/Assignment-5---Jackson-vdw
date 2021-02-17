@@ -1,5 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
+
+//create migrations (set up table) for the database
+// <Auto generated> 
+
 namespace Assignment_5___Jackson_vdw.Migrations
 {
     public partial class Initial : Migration

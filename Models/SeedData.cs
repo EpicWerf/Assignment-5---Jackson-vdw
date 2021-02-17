@@ -6,21 +6,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+//place data to feed into the model when no data exists yet.
+
 namespace Assignment_5___Jackson_vdw.Models
 {
     public class SeedData
     {
         public static void EnsurePopulated (IApplicationBuilder application)
         {
+            //setup context
             BookDbContext context = application.ApplicationServices.
                 CreateScope().ServiceProvider.GetRequiredService<BookDbContext>();
 
+            //do any migrations that are pending
             if(context.Database.GetPendingMigrations().Any())
             {
                 context.Database.Migrate();
             }
 
-            if(!context.Books.Any())
+            //if context doesn't have any books yet, put them in using book objects
+            if (!context.Books.Any())
             {
                 context.Books.AddRange(
                     new Book
@@ -146,6 +151,7 @@ namespace Assignment_5___Jackson_vdw.Models
                     }
                 );
 
+                //save books to context
                 context.SaveChanges();
             }
         }

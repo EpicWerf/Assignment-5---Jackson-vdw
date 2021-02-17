@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Assignment_5___Jackson_vdw.Models
 {
+    //set up model to collect data that will go into the "Book" object
+    //all fields are required except author middle name
     public class Book
     {
+        //set up bookID as the private key
         [Key]
         public int BookId { get; set; }
         [Required]
@@ -20,7 +23,7 @@ namespace Assignment_5___Jackson_vdw.Models
         public string AuthorLast { get; set; }
         [Required]
         public string Publisher { get; set; }
-
+        //Use Regex to validate ISBN input. 
         [Required][RegularExpression(@"(ISBN[-] * (1[03]) *[ ] * (: ){0, 1})* (([0 - 9Xx][- ]*){13}| ([0 - 9Xx][- ] *){ 10})",
          ErrorMessage = "ISBN must be in valid format: XXX-XXXXXXXXXX.")]
         public string ISBN { get; set; }

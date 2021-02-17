@@ -1,5 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
+@*call in stylesheets and set page title for tab*@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +10,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+    @*nav bar with links to other pages*@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -26,12 +29,15 @@
             </div>
         </nav>
     </header>
+
+    @*Body housing the imported view from other pages*@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+    @*Footer to look cute and call in any scripts needed*@
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - My Lil Amazon - Jackson van der Werf

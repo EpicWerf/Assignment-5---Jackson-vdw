@@ -2,12 +2,15 @@
     ViewData["Title"] = "Home Page";
 }
 
+@*call in model to be used*@
 @model IQueryable<Book>
 
+@*generic welcome*@
 <div class="text-center">
     <h1>Check Out Professor Hilton's Book Recommendations!</h1>
 </div>
 
+@*create div using bootstrap and place a book objecat inside of it.*@
 <div class="text-center">
     @foreach (var x in Model)
     {

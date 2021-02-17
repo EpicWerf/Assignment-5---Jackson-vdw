@@ -11,6 +11,7 @@ namespace Assignment_5___Jackson_vdw.Controllers
 {
     public class HomeController : Controller
     {
+        //set up private and public variables for the repository
         private readonly ILogger<HomeController> _logger;
         private IBookRepository _repository;
 
@@ -20,15 +21,17 @@ namespace Assignment_5___Jackson_vdw.Controllers
             _repository = repository;
         }
 
+        //Controller for the index page
         public IActionResult Index()
         {
             return View(_repository.Books);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        // not being used right not
+        //public IActionResult Privacy()
+        //{
+        //    return View();
+        //}
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

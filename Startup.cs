@@ -27,11 +27,13 @@ namespace Assignment_5___Jackson_vdw
         {
             services.AddControllersWithViews();
 
+            //Add connection string to allow database connection
             services.AddDbContext<BookDbContext>(options =>
             {
                 options.UseSqlServer(Configuration["ConnectionStrings:BookConnection"]);
             });
 
+            //add scoped to assist with database creation and repository
             services.AddScoped<IBookRepository, EFBookRepository>();
         }
 

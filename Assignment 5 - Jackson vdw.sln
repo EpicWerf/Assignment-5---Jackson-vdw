@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment 5 - Jackson vdw", "Assignment 5 - Jackson vdw.csproj", "{B04D8D0D-C22E-45C1-8C95-BC40411203A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B04D8D0D-C22E-45C1-8C95-BC40411203A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B04D8D0D-C22E-45C1-8C95-BC40411203A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B04D8D0D-C22E-45C1-8C95-BC40411203A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B04D8D0D-C22E-45C1-8C95-BC40411203A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48EB2567-CAA8-46A5-8245-8627A97AD037}
+	EndGlobalSection
+EndGlobal

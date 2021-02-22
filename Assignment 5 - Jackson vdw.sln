@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment 6 - Jackson vdw", "Assignment 6 - Jackson vdw.csproj", "{B04D8D0D-C22E-45C1-8C95-BC40411203A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment 5 - Jackson vdw", "Assignment 5 - Jackson vdw.csproj", "{B04D8D0D-C22E-45C1-8C95-BC40411203A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

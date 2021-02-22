@@ -30,12 +30,22 @@
         </nav>
     </header>
 
+
     @*Body housing the imported view from other pages*@
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        <div class="row">
+            @*Left side text of main page*@
+            <div id="left_side" class="col-4">
+                <h1>Check out our book recommendations!</h1>
+            </div>
+
+            @*Right side of main page*@
+            <div class="col-8">
+                @RenderBody()
+            </div>
+        </div>
     </div>
+
 
     @*Footer to look cute and call in any scripts needed*@
     <footer class="border-top footer text-muted">

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment_5___Jackson_vdw.Migrations
 {
     [DbContext(typeof(BookDbContext))]
-    [Migration("20210222190140_Initial")]
+    [Migration("20210222210244_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,9 @@ namespace Assignment_5___Jackson_vdw.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CoverImg")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ISBN")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -60,6 +63,9 @@ namespace Assignment_5___Jackson_vdw.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TotalPages")
+                        .HasColumnType("int");
 
                     b.HasKey("BookId");
 

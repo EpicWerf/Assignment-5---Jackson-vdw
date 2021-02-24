@@ -2,16 +2,15 @@
     ViewData["Title"] = "Home Page";
 }
 
-@*call in model to be used*@
+@*Call in model to be used*@
 @model BookListViewModel
-@*generic welcome*@
 
 @*Create div using bootstrap and place a book object inside of it.*@
 @foreach (var b in Model.Books)
 { 
     <div class="card card-outline-primary m-1 p-1">
 
-        @*Put in cover image for the last 3 books*@
+        @*Put in cover image for the last 3 books (or any if i feel like adding more later)*@
         <img class="card-img-top img-fluid" src="@b.CoverImg" />
 
         @*Create header for each card using book title*@        

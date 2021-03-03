@@ -38,7 +38,8 @@ namespace Assignment_5___Jackson_vdw.Models
                         Classification = "Fiction",
                         Category = "Classic",
                         Price = 9.95,
-                        TotalPages = 1488
+                        TotalPages = 1488,
+                        CoverImg = "https://www.cincinnatiarts.org/assets/img/Les-Mis-2020-1300x740-5430515033-1-5430515033.jpg"
                     },
 
                     new Book
@@ -52,7 +53,8 @@ namespace Assignment_5___Jackson_vdw.Models
                         Classification = "Non-Fiction",
                         Category = "Biography",
                         Price = 14.58,
-                        TotalPages = 944
+                        TotalPages = 944,
+                        CoverImg = "https://th.bing.com/th/id/Rdf5a4f8667e42cae6d47829b29c440ce?rik=ZKADOBl%2fDVgzEQ&riu=http%3a%2f%2fstatic3.businessinsider.com%2fimage%2f5138d57e6bb3f7745a000002-1200%2fteam-of-rivals-the-political-genius-of-abraham-lincoln.jpg&ehk=vp6uHn5HDgE7ptRWZyBwX%2fG1IryJh3Ca3Jb1dOSl%2fms%3d&risl=&pid=ImgRaw"
                     },
 
                     new Book
@@ -65,7 +67,8 @@ namespace Assignment_5___Jackson_vdw.Models
                         Classification = "Non-Fiction",
                         Category = "Biography",
                         Price = 21.54,
-                        TotalPages = 832
+                        TotalPages = 832,
+                        CoverImg = "https://th.bing.com/th/id/Rb2eb80502204b220eb83d28d991cc985?rik=5qGn7kpItyrY6Q&riu=http%3a%2f%2fwww.randomhouse.com%2fbantamdell%2fsnowball%2fimages%2ftop.gif&ehk=9u5kdbsRE8lVnrqFYP%2f0txTA0uB1xPjImZQgFEkM7aY%3d&risl=&pid=ImgRaw"
                     },
 
                     new Book
@@ -79,7 +82,8 @@ namespace Assignment_5___Jackson_vdw.Models
                         Classification = "Non-Fiction",
                         Category = "Biography",
                         Price = 11.61,
-                        TotalPages = 864
+                        TotalPages = 864,
+                        CoverImg = "https://d1y822qhq55g6.cloudfront.net/thumbnails/nav-event-ulysses-book-thumb.jpg"
                     },
 
                     new Book
@@ -92,7 +96,8 @@ namespace Assignment_5___Jackson_vdw.Models
                         Classification = "Non-Fiction",
                         Category = "Historical",
                         Price = 13.33,
-                        TotalPages = 528
+                        TotalPages = 528,
+                        CoverImg = "https://www.barnesandnoble.com/blog/barnesy/wp-content/uploads/2014/10/unbroken.png"
                     },
 
                     new Book
@@ -105,7 +110,8 @@ namespace Assignment_5___Jackson_vdw.Models
                         Classification = "Fiction",
                         Category = "Historical Fiction",
                         Price = 15.95,
-                        TotalPages = 288
+                        TotalPages = 288,
+                        CoverImg = "https://th.bing.com/th/id/Re951cf1fdd51fe8fc861517cb0c060bb?rik=b7%2f7bRlJvskILQ&riu=http%3a%2f%2f2.bp.blogspot.com%2f_GzOUtcKneqU%2fS8SMApjBjeI%2fAAAAAAAAALE%2fxFNdSZwTaJ4%2fs1600%2fThe%2bGreat%2bTrain%2bRobbery%2bby%2bMichael%2bCrichton.jpg&ehk=7xc%2feDyQVIZz7180XSM7VsWhAXAD0zAhOsdsraZmIKg%3d&risl=&pid=ImgRaw"
                     },
 
                     new Book
@@ -118,7 +124,8 @@ namespace Assignment_5___Jackson_vdw.Models
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
                         Price = 14.99,
-                        TotalPages = 304
+                        TotalPages = 304,
+                        CoverImg = "https://i1.wp.com/the1211.com/wp-content/uploads/2020/05/Deep-Work.jpg?resize=828%2C525&ssl=1"
                     },
                     
                     new Book
@@ -131,7 +138,8 @@ namespace Assignment_5___Jackson_vdw.Models
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
                         Price = 21.66,
-                        TotalPages = 240
+                        TotalPages = 240,
+                        CoverImg = "https://www.getabstract.com/abstractData/flashFile/its-your-ship-abrashoff-en-4578_993x520.jpg"
                     },
 
                     new Book
@@ -144,7 +152,8 @@ namespace Assignment_5___Jackson_vdw.Models
                         Classification = "Non-Fiction",
                         Category = "Business",
                         Price = 29.16,
-                        TotalPages = 400
+                        TotalPages = 400,
+                        CoverImg = "https://th.bing.com/th/id/R07ec26fe23662a822dc60ae6a5a181ea?rik=xd7Viz4bokZVVQ&riu=http%3a%2f%2fwww.impulsegamer.com%2farticles%2fwp-content%2fuploads%2f2015%2f07%2fthevirginway-620x349.jpg&ehk=lUTX%2bi5GUyIhj3YHajRROL8AfwLlK7kujnoeRmQvRvw%3d&risl=&pid=ImgRaw"
                     },
 
                     new Book
@@ -157,7 +166,8 @@ namespace Assignment_5___Jackson_vdw.Models
                         Classification = "Fiction",
                         Category = "Thrillers",
                         Price = 15.03,
-                        TotalPages = 642
+                        TotalPages = 642,
+                        CoverImg = "https://th.bing.com/th/id/Rfa1ceb26f1d5bc2dcb91d2c24649b316?rik=1U9DH0Assdzg%2fw&riu=http%3a%2f%2fecx.images-amazon.com%2fimages%2fI%2f81FgK3DHiJS.png&ehk=4EXRVJMerLu0QM6rlwbMANiwp1g11bLw4o4GS%2bWvX7o%3d&risl=&pid=ImgRaw"
                     },
 
                     //bring in 3 of my own favorite books. Give them a cover image to be placed on their card

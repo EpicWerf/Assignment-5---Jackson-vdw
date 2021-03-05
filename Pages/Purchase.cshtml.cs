@@ -16,9 +16,10 @@ namespace Assignment_5___Jackson_vdw.Pages
         private IBookRepository repository;
 
         //constructor
-        public PurchaseModel(IBookRepository repo)
+        public PurchaseModel(IBookRepository repo, Cart cartService)
         {
             repository = repo;
+            Cart = cartService;
         }
 
         //properties
@@ -27,30 +28,53 @@ namespace Assignment_5___Jackson_vdw.Pages
 
         //methods
         //on a get - set the returnURl equal to whatever was passed in
-        public void OnGet(string returnUrl)
-        {
-            //if nothing was passed in, set it equal to "/"
-            ReturnUrl = returnUrl ?? "/";
-            //if nothing was in the cart, get a new cart
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
-        }
+        //public void OnGet(string returnUrl)
+        //{
+        //    //if nothing was passed in, set it equal to "/"
+        //    ReturnUrl = returnUrl ?? "/";
+        //    //if nothing was in the cart, get a new cart
+        //    Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+        //}
 
         //
+        //public IActionResult OnPost(long bookId, string returnUrl)
+        //{
+        //    //look at first or default
+        //    Book book = repository.Books.FirstOrDefault(b => b.BookId == bookId);
+
+        //    //get the cart or add a new cart
+        //    Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+
+        //    //add an item to the cart of qty 1
+        //    Cart.AddItem(book, 1);
+
+        //    //convert the cart into Json
+        //    HttpContext.Session.SetJson("cart", Cart);
+
+        //    //send to a new page using the returnUrl
+        //    return RedirectToPage(new { returnUrl = returnUrl });
+        //}
+
+        public void OnGet(string returnUrl)
+        {
+            //Set the ReturnUrl = returnUrl or / if nothing was passed in
+            ReturnUrl = returnUrl ?? "/";
+        }
         public IActionResult OnPost(long bookId, string returnUrl)
         {
             //look at first or default
-            Book book = repository.Books.FirstOrDefault(b => b.BookId == bookId);
-
+            Book book = repository.Books
+                .FirstOrDefault(b => b.BookId == bookId);
             //get the cart or add a new cart
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
-
-            //add an item to the cart of qty 1
             Cart.AddItem(book, 1);
-
-            //convert the cart into Json
-            HttpContext.Session.SetJson("cart", Cart);
-
             //send to a new page using the returnUrl
+            return RedirectToPage(new { returnUrl = returnUrl });
+        }
+        //handler to remove an item from the cart
+        public IActionResult OnPostRemove(long bookId, string returnUrl)
+        {
+            Cart.RemoveLine(Cart.Lines.First(cl =>
+                cl.Book.BookId == bookId).Book);
             return RedirectToPage(new { returnUrl = returnUrl });
         }
     }

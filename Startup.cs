@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Assignment_5___Jackson_vdw.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Assignment_5___Jackson_vdw
 {
@@ -42,6 +43,12 @@ namespace Assignment_5___Jackson_vdw
             //setting up session storage
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            //create a service for the Cart class
+            //goal is to satisfy requests for Cart objects with SessionCart objects that will seamlessly store themselves.
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            //specifies that the same object should always be used
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

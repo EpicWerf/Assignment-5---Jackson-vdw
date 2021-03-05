@@ -35,6 +35,13 @@ namespace Assignment_5___Jackson_vdw
 
             //add scoped to assist with database creation and repository
             services.AddScoped<IBookRepository, EFBookRepository>();
+
+            //allows you to use razor pages
+            services.AddRazorPages();
+
+            //setting up session storage
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +59,9 @@ namespace Assignment_5___Jackson_vdw
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            //allows you to use session storage
+            app.UseSession();
 
             app.UseRouting();
 
@@ -85,8 +95,13 @@ namespace Assignment_5___Jackson_vdw
 
                 //if what comes in doesn't match anything, use the default route setup (Home -> Index)
                 endpoints.MapDefaultControllerRoute();
+
+                //allows endpoints to use razor pages (add routing for razor pages)
+                endpoints.MapRazorPages();
             });
 
+            //goes to the SeedData class, calls the EnsurePopulated method
+            //decide if there is anything in the database and make decisions based on that
             SeedData.EnsurePopulated(app);
         }
     }

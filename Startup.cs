@@ -79,25 +79,25 @@ namespace Assignment_5___Jackson_vdw
                 //if they type a category and page into the URL
                 endpoints.MapControllerRoute(
                     "catpage",
-                    "{category}/{page:int}",
+                    "{category}/{pageNum:int}",
                     new { Controller = "Home", Action = "Index" });
 
                 //if they only type the page number
                 endpoints.MapControllerRoute(
-                    "page",
-                    "{page:int}",
+                    "pageNum",
+                    "{pageNum:int}",
                     new { Controller = "Home", Action = "Index" });
 
                 //if they type a category into the URL. Set the page to 1 since the user didn't provide it
                 endpoints.MapControllerRoute(
                     "category",
                     "{category}",
-                    new { Controller = "Home", Action = "Index", page = 1 });
+                    new { Controller = "Home", Action = "Index", pageNum = 1 });
 
                 //if they type projects/page into the URL
                 endpoints.MapControllerRoute(
                     "pagination",
-                    "Projects/{page}",
+                    "Projects/{pageNum}",
                     new { Controller = "Home", Action = "Index" });
 
                 //if what comes in doesn't match anything, use the default route setup (Home -> Index)

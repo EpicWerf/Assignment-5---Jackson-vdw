@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Assignment_5___Jackson_vdw.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Assignment_5___Jackson_vdw
 {
@@ -35,6 +36,19 @@ namespace Assignment_5___Jackson_vdw
 
             //add scoped to assist with database creation and repository
             services.AddScoped<IBookRepository, EFBookRepository>();
+
+            //allows you to use razor pages
+            services.AddRazorPages();
+
+            //setting up session storage
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+
+            //create a service for the Cart class
+            //goal is to satisfy requests for Cart objects with SessionCart objects that will seamlessly store themselves.
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            //specifies that the same object should always be used
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +67,9 @@ namespace Assignment_5___Jackson_vdw
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            //allows you to use session storage
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -62,31 +79,36 @@ namespace Assignment_5___Jackson_vdw
                 //if they type a category and page into the URL
                 endpoints.MapControllerRoute(
                     "catpage",
-                    "{category}/{page:int}",
+                    "{category}/{pageNum:int}",
                     new { Controller = "Home", Action = "Index" });
 
                 //if they only type the page number
                 endpoints.MapControllerRoute(
-                    "page",
-                    "{page:int}",
+                    "pageNum",
+                    "{pageNum:int}",
                     new { Controller = "Home", Action = "Index" });
 
                 //if they type a category into the URL. Set the page to 1 since the user didn't provide it
                 endpoints.MapControllerRoute(
                     "category",
                     "{category}",
-                    new { Controller = "Home", Action = "Index", page = 1 });
+                    new { Controller = "Home", Action = "Index", pageNum = 1 });
 
                 //if they type projects/page into the URL
                 endpoints.MapControllerRoute(
                     "pagination",
-                    "Projects/{page}",
+                    "Projects/{pageNum}",
                     new { Controller = "Home", Action = "Index" });
 
                 //if what comes in doesn't match anything, use the default route setup (Home -> Index)
                 endpoints.MapDefaultControllerRoute();
+
+                //allows endpoints to use razor pages (add routing for razor pages)
+                endpoints.MapRazorPages();
             });
 
+            //goes to the SeedData class, calls the EnsurePopulated method
+            //decide if there is anything in the database and make decisions based on that
             SeedData.EnsurePopulated(app);
         }
     }
